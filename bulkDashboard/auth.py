@@ -76,9 +76,9 @@ def bulkform():
             m2.save(os.path.join(base_dir, session['namefinalm']))
             m = open(session['nameUrlm'], 'r')
 
-            session['messageFinal'] = m1 + " " + m2 + " " + m3
+            # session['messageFinal'] = m1 + " " + m2 + " " + m3
 
-            message = session['messageFinal']
+            message = 't'
 
             payloads = '''------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"sid\"\r\n\r\n39d34a36-ab50-11e8-8129-00505696ce21\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"request\"\r\n\r\n%s\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--'''
             replace = []
@@ -96,19 +96,20 @@ def bulkform():
             p = open('logs1.txt', 'w')  # Have to ask
             messageLog = open('MessageLog.txt', 'w')  # Have to ask
             log = open('logTest.txt', 'a')  # Have to ask
-            for number in f:
-                if number is not '\n':
-                    dictionary['mobileNumber'] = number.rstrip()
-                    print(dictionary)
-                    log.write(json.dumps(dictionary))
-                    fullArray.append(dict(dictionary))
-                    if len(fullArray) is 100:
-                        pyas = payloads % json.dumps(fullArray)
-                        response = requests.request("POST", url, data=pyas, headers=headers)
-                        p.write(response.text)
-                        p.write('\n')
-                        messageLog.write(pyas)
-                        fullArray = []
+            for i, line in enumerate(f):
+                    if line is not '\n':
+                        dictionary['mobileNumber'] = line.rstrip()
+                        session['messageFinal'] = m1 + " " + m[i] + " " + m3
+                        dictionary['message'] = session['messageFinal']
+                        log.write(json.dumps(dictionary))
+                        fullArray.append(dict(dictionary))
+                        if len(fullArray) is 100:
+                            pyas = payloads % json.dumps(fullArray)
+                            response = requests.request("POST", url, data=pyas, headers=headers)
+                            p.write(response.text)
+                            p.write('\n')
+                            messageLog.write(pyas)
+                            fullArray = []
             # print(pyas)
             pyas = payloads % json.dumps(fullArray)
             log.close()
