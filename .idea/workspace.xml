@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="661e7a48-6878-4c57-8c6e-4b3f3b647740" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bulkDashboard/templates/singleform.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessageLog.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/bulkDashboard/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/messages2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/messages3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/messages4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/messages7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/numbers2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/numbers3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/numbers4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/numbers7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/bulkDashboard/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bulkDashboard/templates/bulkform.html" beforeDir="false" afterPath="$PROJECT_DIR$/bulkDashboard/templates/bulkform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bulkDashboard/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bulkDashboard/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,44 +29,44 @@
     <session id="-1348398020">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="11" />
-          <entry key="py" value="13" />
-          <entry key="sql" value="2" />
+          <entry key="html" value="12" />
+          <entry key="py" value="14" />
+          <entry key="sql" value="3" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="11" />
+          <entry key="HTML" value="12" />
           <entry key="PLAIN_TEXT" value="12" />
-          <entry key="Python" value="13" />
-          <entry key="SQL" value="2" />
+          <entry key="Python" value="14" />
+          <entry key="SQL" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="1" />
           <entry key="html" value="330" />
-          <entry key="py" value="22083" />
+          <entry key="py" value="22733" />
           <entry key="sql" value="18" />
           <entry key="txt" value="4" />
         </counts>
@@ -90,7 +76,7 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="330" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="22083" />
+          <entry key="Python" value="22733" />
           <entry key="SQL" value="18" />
         </counts>
       </usages-collector>
@@ -98,14 +84,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bulkDashboard/auth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="117" column="45" lean-forward="true" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="45" />
+            <state relative-caret-position="1836">
+              <caret line="117" column="45" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="45" />
               <folding>
-                <marker date="1550348325341" expanded="true" signature="1640:3994" ph="..." />
+                <marker date="1550386300002" expanded="true" signature="1640:3994" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bulkDashboard/templates/auth/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bulkDashboard/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bulkDashboard/schema.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -144,7 +160,6 @@
         <option value="$PROJECT_DIR$/bulkDashboard/templates/auth/login.html" />
         <option value="$PROJECT_DIR$/bulkDashboard/schema.sql" />
         <option value="$PROJECT_DIR$/l1.txt" />
-        <option value="$PROJECT_DIR$/bulkDashboard/__init__.py" />
         <option value="$PROJECT_DIR$/bulkDashboard/test.py" />
         <option value="$PROJECT_DIR$/bulkDashboard/codes.py" />
         <option value="$PROJECT_DIR$/bulkDashboard/templates/auth/singleform.html" />
@@ -152,6 +167,7 @@
         <option value="$PROJECT_DIR$/bulkDashboard/templates/bulkform.html" />
         <option value="$PROJECT_DIR$/bulkDashboard/templates/singleform.html" />
         <option value="$PROJECT_DIR$/bulkDashboard/auth.py" />
+        <option value="$PROJECT_DIR$/bulkDashboard/__init__.py" />
       </list>
     </option>
   </component>
@@ -162,10 +178,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="46" />
-    <option name="y" value="-11" />
-    <option name="width" value="1321" />
-    <option name="height" value="780" />
+    <option name="x" value="1892" />
+    <option name="y" value="-4" />
+    <option name="width" value="1319" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -173,6 +189,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -185,18 +202,30 @@
               <item name="Bulk" type="462c0819:PsiDirectoryNode" />
               <item name="bulkDashboard" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Bulk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bulk" type="462c0819:PsiDirectoryNode" />
+              <item name="bulkDashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Bulk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Bulk" type="462c0819:PsiDirectoryNode" />
+              <item name="bulkDashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql&#10;sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aban" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -234,10 +263,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="-11" width="1321" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="1412" y="-11" width="1875" height="1092" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17730497" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12726276" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -294,20 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bulkDashboard/schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bulkDashboard/templates/auth/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/l1.txt" />
     <entry file="file://$PROJECT_DIR$/bulkDashboard/test.py" />
     <entry file="file://$PROJECT_DIR$/bulkDashboard/messages2.txt" />
@@ -318,13 +332,6 @@
     <entry file="file://$PROJECT_DIR$/bulkDashboard/numbers3.txt" />
     <entry file="file://$PROJECT_DIR$/bulkDashboard/numbers4.txt" />
     <entry file="file://$PROJECT_DIR$/bulkDashboard/numbers7.txt" />
-    <entry file="file://$PROJECT_DIR$/bulkDashboard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bulkDashboard/Numbers8.txt" />
     <entry file="file://$PROJECT_DIR$/bulkDashboard/Messages8.txt" />
     <entry file="file://$PROJECT_DIR$/bulkDashboard/codes.py" />
@@ -351,11 +358,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bulkDashboard/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="117" column="45" lean-forward="true" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="45" />
+        <state relative-caret-position="1836">
+          <caret line="117" column="45" selection-start-line="117" selection-start-column="45" selection-end-line="117" selection-end-column="45" />
           <folding>
-            <marker date="1550348325341" expanded="true" signature="1640:3994" ph="..." />
+            <marker date="1550386300002" expanded="true" signature="1640:3994" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bulkDashboard/templates/auth/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bulkDashboard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bulkDashboard/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -30,6 +30,8 @@ def create_app(test_config=None):
 
     from . import auth
     app.register_blueprint(auth.bp)
-    app.add_url_rule('/', endpoint='auth.login')
+    app.add_url_rule('/', endpoint='auth.bulkform')
+    app.add_url_rule('/auth', endpoint='auth.bulkform')
+    app.add_url_rule('/auth/login', endpoint='auth.bulkform')
 
     return app
