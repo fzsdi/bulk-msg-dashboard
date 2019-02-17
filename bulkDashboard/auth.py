@@ -16,6 +16,17 @@ url = "http://vas.rpg.ir/api/send/sendSms"
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
 
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('auth.login'))
+
+        return view(**kwargs)
+
+    return wrapped_view
+
+
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
@@ -46,81 +57,140 @@ def register():
     return render_template('auth/register.html')
 
 
-@bp.route('/bulkform', methods=('GET', 'POST'))
-def bulkform():
+@bp.route('/singleform', methods=('GET', 'POST'))
+@login_required
+def singleform():
     if request.method == 'POST':
-
+        numArray = []
         jobId = request.form['jobId']
         m1 = request.form['m1']
-        m2 = request.files['m2']
-        m3 = request.form['m3']
         l1 = request.files['l1']
-        # l2 = request.files['l2']
+
+        payloads = '''------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"sid\"\r\n\r\n39d34a36-ab50-11e8-8129-00505696ce21\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"request\"\r\n\r\n%s\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--'''
+        replace = []
+        dictionary = {'mobileNumber': '9106808434', 'message': m1, 'shortCode': '308240'}
+        replace.append(dictionary)
+        pyas = payloads % json.dumps(replace)
+        headers = {
+            'content-type': "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+            'authorization': "key=dc8c8671-ab4f-11e8-8129-00505696ce21",
+            'cache-control': "no-cache",
+            'postman-token': "d395258e-19d1-ec97-fe4b-65eca1ff59cc"
+        }
+        fullArray = []
+
         db = get_db()
-        error = None
+        error = 'Successful'
         if db.execute(
                 'SELECT id FROM jobs WHERE jobName = ?', (jobId,)
         ).fetchone() is not None:
             error = 'Job {} exists.'.format(jobId)
 
-        if error is None:
+        if error is 'Successful':
+
             db.execute('INSERT INTO jobs (jobName) VALUES (?)', (jobId,))
             db.commit()
 
-            session['namefinal'] = 'numbers' + jobId + '.txt'
-            session['namefinalm'] = 'messages' + jobId + '.txt'
-            session['nameUrl'] = base_dir + "/" + session['namefinal']
-            session['nameUrlm'] = base_dir + "/" + session['namefinalm']
+            session['numName'] = 'Numbers' + jobId + '.txt'
+            l1.save(os.path.join(base_dir, session['numName']))
+            session['numUrl'] = base_dir + "/" + session['numName']
 
-            l1.save(os.path.join(base_dir, session['namefinal']))
-            m2.save(os.path.join(base_dir, session['namefinalm']))
-            m = open(session['nameUrlm'], 'r')
+            with open(session['numUrl']) as nums:
+                print('I got in numbers loop')
+                for line in nums:
+                    numArray.append(line.rstrip())
+            print(numArray)
 
-            # session['messageFinal'] = m1 + " " + m2 + " " + m3
+            for i in range(100):
+                print('I got in send loop')
+                dictionary['mobileNumber'] = numArray[i]
 
-            message = 't'
+                fullArray.append(dict(dictionary))
+                pyas = payloads % json.dumps(fullArray)
+                response = requests.request("POST", url, data=pyas, headers=headers)
+                print(dictionary)
+                fullArray = []
 
-            payloads = '''------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"sid\"\r\n\r\n39d34a36-ab50-11e8-8129-00505696ce21\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"request\"\r\n\r\n%s\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--'''
-            replace = []
-            dictionary = {'mobileNumber': '9106808434', 'message': message, 'shortCode': '308240'}
-            replace.append(dictionary)
-            pyas = payloads % json.dumps(replace)
-            headers = {
-                'content-type': "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-                'authorization': "key=dc8c8671-ab4f-11e8-8129-00505696ce21",
-                'cache-control': "no-cache",
-                'postman-token': "d395258e-19d1-ec97-fe4b-65eca1ff59cc"
-            }
-            fullArray = []
-            f = open(session['nameUrl'], 'r')
-            p = open('logs1.txt', 'w')  # Have to ask
-            messageLog = open('MessageLog.txt', 'w')  # Have to ask
-            log = open('logTest.txt', 'a')  # Have to ask
-            for i, line in enumerate(f):
-                    if line is not '\n':
-                        dictionary['mobileNumber'] = line.rstrip()
-                        session['messageFinal'] = m1 + " " + m[i] + " " + m3
-                        dictionary['message'] = session['messageFinal']
-                        log.write(json.dumps(dictionary))
-                        fullArray.append(dict(dictionary))
-                        if len(fullArray) is 100:
-                            pyas = payloads % json.dumps(fullArray)
-                            response = requests.request("POST", url, data=pyas, headers=headers)
-                            p.write(response.text)
-                            p.write('\n')
-                            messageLog.write(pyas)
-                            fullArray = []
-            # print(pyas)
             pyas = payloads % json.dumps(fullArray)
-            log.close()
             response = requests.request("POST", url, data=pyas, headers=headers)
-            # print(response.text)
-            p.write(response.text)
-            messageLog.write(pyas)
+        flash(error)
 
-            session.clear()
-            return redirect(url_for('auth.bulkform'))
+    return render_template('singleform.html')
 
+
+@bp.route('/bulkform', methods=('GET', 'POST'))
+@login_required
+def bulkform():
+    if request.method == 'POST':
+
+        msgArray = []
+        numArray = []
+        fullArray = []
+        jobId = request.form['jobId']
+        m1 = request.form['m1']
+        m2 = request.files['m2']
+        m3 = request.form['m3']
+        l1 = request.files['l1']
+
+        message = ""
+
+        payloads = '''------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"sid\"\r\n\r\n39d34a36-ab50-11e8-8129-00505696ce21\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"request\"\r\n\r\n%s\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--'''
+        replace = []
+        dictionary = {'mobileNumber': '9106808434', 'message': message, 'shortCode': '308240'}
+        replace.append(dictionary)
+        pyas = payloads % json.dumps(replace)
+        headers = {
+            'content-type': "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+            'authorization': "key=dc8c8671-ab4f-11e8-8129-00505696ce21",
+            'cache-control': "no-cache",
+            'postman-token': "d395258e-19d1-ec97-fe4b-65eca1ff59cc"
+        }
+        fullArray = []
+        print('Hi')
+        db = get_db()
+        error = 'Successful'
+        if db.execute(
+                'SELECT id FROM jobs WHERE jobName = ?', (jobId,)
+        ).fetchone() is not None:
+            error = 'Job {} exists.'.format(jobId)
+
+        if error is 'Successful':
+            db.execute('INSERT INTO jobs (jobName) VALUES (?)', (jobId,))
+            db.commit()
+
+            session['msgName'] = 'Messages' + jobId + '.txt'
+            m2.save(os.path.join(base_dir, session['msgName']))
+            session['msgUrl'] = base_dir + "/" + session['msgName']
+
+            session['numName'] = 'Numbers' + jobId + '.txt'
+            l1.save(os.path.join(base_dir, session['numName']))
+            session['numUrl'] = base_dir + "/" + session['numName']
+
+            with open(session['msgUrl']) as msgs:
+                print('I got in messages loop')
+                for line in msgs:
+                    msgArray.append(m1 + " " + line.rstrip() + " " + m3)
+                    print(msgArray)
+
+            with open(session['numUrl']) as nums:
+                print('I got in numbers loop')
+                for line in nums:
+                    numArray.append(line.rstrip())
+            print(numArray)
+
+            for i in range(100):
+                print('I got in send loop')
+                dictionary['mobileNumber'] = numArray[i]
+                dictionary['message'] = msgArray[i]
+
+                fullArray.append(dict(dictionary))
+                pyas = payloads % json.dumps(fullArray)
+                response = requests.request("POST", url, data=pyas, headers=headers)
+                print(dictionary)
+                fullArray = []
+
+            pyas = payloads % json.dumps(fullArray)
+            response = requests.request("POST", url, data=pyas, headers=headers)
         flash(error)
 
     return render_template('bulkform.html')
@@ -168,14 +238,3 @@ def load_logged_in_user():
 def logout():
     session.clear()
     return redirect(url_for('auth.login'))
-
-
-def login_required(view):
-    @functools.wraps(view)
-    def wrapped_view(**kwargs):
-        if g.user is None:
-            return redirect(url_for('auth.login'))
-
-        return view(**kwargs)
-
-    return wrapped_view

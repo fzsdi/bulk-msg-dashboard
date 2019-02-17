@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-<h1>{% block title %}Bulk Form{% endblock %}</h1>
+<h1>{% block title %}Single Form{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -22,11 +22,6 @@
     <input name="jobId" id="jobId" style="border:1px solid #000000" required>
     <label>First MSG</label>
     <textarea name="m1" id="m1" style="border:1px solid #000000" required></textarea>
-    <label>Second MSG</label>
-    <input style="border:1px solid #000000" class="form-control-file" name="m2"
-           id="m2" type="file" accept=".text/csv,.txt">
-    <label>Third MSG</label>
-    <textarea name="m3" id="m3" style="border:1px solid #000000"></textarea>
     <label>Mobile Numbers</label>
     <input style="border:1px solid #000000" class="form-control-file" name="l1"
            id="l1" type="file" accept=".text/csv,.txt">
