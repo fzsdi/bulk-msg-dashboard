@@ -1,5 +1,6 @@
 # Bulk Dashboard
 sending group messages to group mobile numbers (MCI) in parallel
+
 Build and Install bulk-dashboard
 
 Download the bulk_dashboard-1.0.0-py3-none-any.whl that I've been uploaded into this repo.
