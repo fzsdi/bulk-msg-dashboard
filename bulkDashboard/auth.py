@@ -11,7 +11,7 @@ from bulkDashboard.db import get_db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
-url = "http://vas.rpg.ir/api/send/sendSms"
+url = SAMPLE_URL
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
