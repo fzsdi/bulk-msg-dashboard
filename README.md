@@ -1,4 +1,4 @@
-# Bulk Dashboard
+# Bulk Messaging Dashboard
 sending group messages to group mobile numbers (MCI) in parallel
 
 Build and Install bulk-dashboard
