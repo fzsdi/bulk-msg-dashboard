@@ -27,8 +27,6 @@ export FLASK_APP=bulkDashboard
 export FLASK_ENV=development
 flask run
 ```
-Now you can login to the dashboard with these details:
-username: taranom
-password: hellogram
+
 Bulk form is for sending 100 messages to 100 mobile numbers in each requests. First MSG and Third MSG are constant.
 single form is for sending a special message to 100 mobile numbers in each requests.
