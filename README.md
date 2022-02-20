@@ -3,7 +3,7 @@ sending group messages to group mobile numbers (MCI) in parallel
 
 Build and Install bulk-dashboard
 
-Download the bulk_dashboard-1.0.0-py3-none-any.whl that I've been uploaded into this repo.
+Download the bulk_dashboard-1.0.0-py3-none-any.whl that I've uploaded into this repo.
 To deploy bulk dashboard elsewhere, you build a wheel format file, with the .whl extension. Make sure the wheel library is installed first:
 ```bash
 pip install wheel
@@ -17,7 +17,7 @@ Since this is a different machine, you need to run init-db to create the databas
 export FLASK_APP=bulkDashboard
 flask init-db
 ```
-if you haven't installed virtual environment or flask yet you can learn it to the following link: http://flask.pocoo.org/docs/1.0/installation/#virtual-environments
+if you haven't installed virtual environment or flask yet, you can learn it: http://flask.pocoo.org/docs/1.0/installation/#virtual-environments
 
 Then put the database that I've uploaded into this repo in bulkdashboard-instance.
 You can run the application with these commands:
